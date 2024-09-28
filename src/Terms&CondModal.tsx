@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { handleKeyPress, initialize, reset } from "./utils";
 
-const condText = `The services are provided on an as-is and as-available basis.`;
-/* You agree that your use of the services will be at your sole risk. \
+const condText = `The services are provided on an as-is and as-available basis. \
+You agree that your use of the services will be at your sole risk. \
 To the fullest extent permitted by law, we disclaim all warranties, \
 express or implied, in connection with the services and your use thereof, \
 including, without limitation, the implied warranties of merchantability, \
 fitness for a particular purpose, and non-infringement. \
 We make no warranties or representations about the accuracy or completeness \
 of the services' content or the content of any websites or mobile applications \
-linked to the services and we will assume no liability or responsibility.` */
+linked to the services and we will assume no liability or responsibility.`
 
 export default function TermsAndCondModal({
   open,
