@@ -112,7 +112,10 @@ function nextActiveWord() {
     );
     moveCaretForward(top, left - 2);
     wordIdx += 1;
-    agreementReadingCompleteCallback();
+
+    const acc = accuracy();
+    agreementReadingCompleteCallback(acc);
+
     return;
   }
   if (wordIdx < numberOfWords) {
@@ -176,4 +179,18 @@ function resetAgreementContent() {
       removeStateClass(l as HTMLElement);
     });
   });
+}
+
+function accuracy() {
+  let totalLetters = 0;
+  let correctLetters = 0;
+  Array.from(wordContainer!.children).forEach((w: Element) => {
+    Array.from(w.children).forEach((l: Element) => {
+      if (l.classList.contains("text-cyan-500")) {
+        correctLetters++;
+      }
+      totalLetters++;
+    });
+  });
+  return parseFloat(((correctLetters / totalLetters) * 100).toFixed(2));
 }

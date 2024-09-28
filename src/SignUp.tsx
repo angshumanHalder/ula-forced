@@ -111,7 +111,6 @@ export default function SignIn() {
         open={isOpen}
         onClose={closeModal}
         agreementHandler={setIsTermsAgreed}
-        isTermsAgreed={isTermsAgreed}
       />}
     </>
   )
